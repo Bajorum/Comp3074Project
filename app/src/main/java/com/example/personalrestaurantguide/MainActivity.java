@@ -5,14 +5,12 @@ import android.os.Bundle;
 import android.view.View;
 import androidx.appcompat.app.AppCompatActivity;
 
-// MainActivity handles the app's launch and user interaction with the main screen.
 public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // Set click listeners for each card
         findViewById(R.id.card_restaurant_1).setOnClickListener(this::onRestaurantClick);
         findViewById(R.id.card_restaurant_2).setOnClickListener(this::onRestaurantClick);
         findViewById(R.id.card_restaurant_3).setOnClickListener(this::onRestaurantClick);
