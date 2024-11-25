@@ -11,16 +11,25 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // Set click listeners for each restaurant card
         findViewById(R.id.card_restaurant_1).setOnClickListener(this::onRestaurantClick);
         findViewById(R.id.card_restaurant_2).setOnClickListener(this::onRestaurantClick);
         findViewById(R.id.card_restaurant_3).setOnClickListener(this::onRestaurantClick);
         findViewById(R.id.card_restaurant_4).setOnClickListener(this::onRestaurantClick);
         findViewById(R.id.card_restaurant_5).setOnClickListener(this::onRestaurantClick);
     }
+    
+    /**
+     * Handle the click events for restaurant cards.
+     * This method creates an intent to navigate to the DetailsActivity and passes restaurant-specific data.
+     *
+     * @param view The clicked view (restaurant card).
+     */
 
     public void onRestaurantClick(View view) {
         Intent intent = new Intent(this, DetailsActivity.class);
 
+        // Pass data specific to each restaurant based on the clicked view's ID
         if (view.getId() == R.id.card_restaurant_1) {
             intent.putExtra("restaurant_name", "Restaurant 1");
             intent.putExtra("restaurant_details", "123 Main St, City, ZIP");
@@ -32,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
             intent.putExtra("latitude", 37.7749); // San Francisco, CA
             intent.putExtra("longitude", -122.4194);
         } else if (view.getId() == R.id.card_restaurant_2) {
+            // Restaurant 2 details
             intent.putExtra("restaurant_name", "Restaurant 2");
             intent.putExtra("restaurant_details", "456 Oak Ave, City, ZIP");
             intent.putExtra("rating", "Rating: 4.0/5");
@@ -42,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
             intent.putExtra("latitude", 34.0522); // Los Angeles, CA
             intent.putExtra("longitude", -118.2437);
         } else if (view.getId() == R.id.card_restaurant_3) {
+            // Restaurant 3 details 
             intent.putExtra("restaurant_name", "Restaurant 3");
             intent.putExtra("restaurant_details", "789 Pine Rd, City, ZIP");
             intent.putExtra("rating", "Rating: 4.2/5");
@@ -52,6 +63,7 @@ public class MainActivity extends AppCompatActivity {
             intent.putExtra("latitude", 40.7128); // New York City, NY
             intent.putExtra("longitude", -74.0060);
         } else if (view.getId() == R.id.card_restaurant_4) {
+            // Restaurant 4 details
             intent.putExtra("restaurant_name", "Restaurant 4");
             intent.putExtra("restaurant_details", "654 Elm St, City, ZIP");
             intent.putExtra("rating", "Rating: 3.8/5");
@@ -62,6 +74,7 @@ public class MainActivity extends AppCompatActivity {
             intent.putExtra("latitude", 41.8781); // Chicago, IL
             intent.putExtra("longitude", -87.6298);
         } else if (view.getId() == R.id.card_restaurant_5) {
+            // Restaurant 5 details
             intent.putExtra("restaurant_name", "Restaurant 5");
             intent.putExtra("restaurant_details", "321 Cedar Ln, City, ZIP");
             intent.putExtra("rating", "Rating: 5.0/5");
@@ -72,7 +85,8 @@ public class MainActivity extends AppCompatActivity {
             intent.putExtra("latitude", 47.6062); // Seattle, WA
             intent.putExtra("longitude", -122.3321);
         }
-
+        
+        // Start the DetailsActivity with the provided data
         startActivity(intent);
     }
 }
