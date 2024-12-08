@@ -28,6 +28,7 @@ public class DetailsActivity extends AppCompatActivity {
         double longitude = getIntent().getDoubleExtra("longitude", 0.0);
 
         // Populate the data in the views
+
         ((TextView) findViewById(R.id.tvRestaurantName)).setText(restaurantName);
         ((TextView) findViewById(R.id.tvRestaurantDetails)).setText(restaurantDetails);
         ((TextView) findViewById(R.id.tvRating)).setText(rating);
@@ -37,13 +38,15 @@ public class DetailsActivity extends AppCompatActivity {
         ((TextView) findViewById(R.id.tvHours)).setText(hours);
 
         // Initialize the WebView
+
         webViewMap = findViewById(R.id.webViewMap);
 
         // Configure WebView settings
+
         WebSettings webSettings = webViewMap.getSettings();
         webSettings.setCacheMode(WebSettings.LOAD_DEFAULT); // Default cache behavior
-        webSettings.setDomStorageEnabled(true); // Enable DOM storage
-        webSettings.setJavaScriptEnabled(true); // Enable JavaScript
+        webSettings.setDomStorageEnabled(true); // Enable the DOM storage
+        webSettings.setJavaScriptEnabled(true); // Enable the JavaScript
 
         webViewMap.setWebViewClient(new WebViewClient()); // Handle page navigation inside WebView
 

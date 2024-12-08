@@ -14,7 +14,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PersonalRestaurantGuide">
 
-        <!-- Splash Activity -->
+        <!--Splash Activity-->
         <activity android:name=".SplashActivity"
             android:theme="@style/Theme.PersonalRestaurantGuide.NoActionBar"
             android:exported="true">
@@ -24,12 +24,12 @@
             </intent-filter>
         </activity>
 
-        <!-- Main Activity -->
+        <!--Main Activity-->
         <activity android:name=".MainActivity"
             android:theme="@style/Theme.PersonalRestaurantGuide"
             android:exported="false" />
 
-        <!-- Details Activity -->
+        <!--Details Activity-->
         <activity android:name=".DetailsActivity"
             android:theme="@style/Theme.PersonalRestaurantGuide"
             android:exported="false" />
