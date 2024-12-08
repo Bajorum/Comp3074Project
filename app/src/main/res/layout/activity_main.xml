@@ -16,7 +16,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Saved Restaurants"
-            android:textSize="22sp"
+            android:textSize="24sp"
             android:textStyle="bold"
             android:textColor="@android:color/black"
             android:layout_marginBottom="16dp" />
@@ -41,7 +41,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Restaurant 1"
+                    android:text="Pizza Paradise"
                     android:textStyle="bold"
                     android:textSize="18sp"
                     android:textColor="@android:color/black" />
@@ -49,7 +49,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="123 Main St, City, ZIP"
+                    android:text="123 Main St, Springfield, IL"
                     android:textSize="14sp"
                     android:textColor="@android:color/darker_gray"
                     android:layout_marginTop="4dp" />
@@ -76,7 +76,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Restaurant 2"
+                    android:text="Sushi World"
                     android:textStyle="bold"
                     android:textSize="18sp"
                     android:textColor="@android:color/black" />
@@ -84,7 +84,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="456 Oak Ave, City, ZIP"
+                    android:text="456 Oak Ave, Chicago, IL"
                     android:textSize="14sp"
                     android:textColor="@android:color/darker_gray"
                     android:layout_marginTop="4dp" />
@@ -111,7 +111,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Restaurant 3"
+                    android:text="Burger Haven"
                     android:textStyle="bold"
                     android:textSize="18sp"
                     android:textColor="@android:color/black" />
@@ -119,7 +119,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="789 Pine Rd, City, ZIP"
+                    android:text="789 Pine Rd, Denver, CO"
                     android:textSize="14sp"
                     android:textColor="@android:color/darker_gray"
                     android:layout_marginTop="4dp" />
@@ -146,7 +146,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Restaurant 4"
+                    android:text="Taco Fiesta"
                     android:textStyle="bold"
                     android:textSize="18sp"
                     android:textColor="@android:color/black" />
@@ -154,7 +154,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="654 Elm St, City, ZIP"
+                    android:text="321 Elm St, Austin, TX"
                     android:textSize="14sp"
                     android:textColor="@android:color/darker_gray"
                     android:layout_marginTop="4dp" />
@@ -181,7 +181,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Restaurant 5"
+                    android:text="The Green Bowl"
                     android:textStyle="bold"
                     android:textSize="18sp"
                     android:textColor="@android:color/black" />
@@ -189,12 +189,22 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="321 Cedar Ln, City, ZIP"
+                    android:text="654 Cedar Blvd, Portland, OR"
                     android:textSize="14sp"
                     android:textColor="@android:color/darker_gray"
                     android:layout_marginTop="4dp" />
             </LinearLayout>
         </androidx.cardview.widget.CardView>
+
+        <!-- View Reservations Button -->
+        <Button
+            android:id="@+id/btnViewReservations"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="View Reservations"
+            android:backgroundTint="#FF9800"
+            android:textColor="#FFFFFF"
+            android:layout_marginTop="16dp" />
 
     </LinearLayout>
 </ScrollView>

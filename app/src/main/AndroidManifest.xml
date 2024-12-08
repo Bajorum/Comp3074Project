@@ -2,9 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.personalrestaurantguide">
 
+    <!-- Permissions -->
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-
 
     <application
         android:allowBackup="true"
@@ -15,7 +15,8 @@
         android:theme="@style/Theme.PersonalRestaurantGuide">
 
         <!-- Splash Activity -->
-        <activity android:name=".SplashActivity"
+        <activity
+            android:name=".SplashActivity"
             android:theme="@style/Theme.PersonalRestaurantGuide.NoActionBar"
             android:exported="true">
             <intent-filter>
@@ -25,16 +26,30 @@
         </activity>
 
         <!-- Main Activity -->
-        <activity android:name=".MainActivity"
+        <activity
+            android:name=".MainActivity"
             android:theme="@style/Theme.PersonalRestaurantGuide"
             android:exported="false" />
 
         <!-- Details Activity -->
-        <activity android:name=".DetailsActivity"
+        <activity
+            android:name=".DetailsActivity"
             android:theme="@style/Theme.PersonalRestaurantGuide"
             android:exported="false" />
 
+        <!-- Menu Activity -->
+        <activity
+            android:name=".MenuActivity"
+            android:theme="@style/Theme.PersonalRestaurantGuide"
+            android:exported="false" />
+
+        <activity android:name=".ReservationActivity"
+            android:theme="@style/Theme.PersonalRestaurantGuide.NoActionBar"
+            android:exported="true" />
+
+        <activity android:name=".ViewReservationsActivity"
+            android:theme="@style/Theme.PersonalRestaurantGuide.NoActionBar"
+            android:exported="true" />
 
     </application>
 </manifest>
-
