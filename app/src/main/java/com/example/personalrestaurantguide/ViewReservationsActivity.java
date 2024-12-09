@@ -1,16 +1,22 @@
 package com.example.personalrestaurantguide;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
+
 import androidx.appcompat.app.AppCompatActivity;
+
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class ViewReservationsActivity extends AppCompatActivity {
 
-    private static final ArrayList<String> reservations = new ArrayList<>();
+    private static final String PREFS_NAME = "ReservationsPrefs";
+    private static final String RESERVATIONS_KEY = "reservations";
+
+    private ArrayList<String> reservations;
     private ArrayAdapter<String> adapter;
 
     @Override
@@ -18,9 +24,8 @@ public class ViewReservationsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_reservations);
 
-        // Sample reservations (add real data dynamically in the future)
-        reservations.add("Pizza Paradise - 2024-12-10, 6:00 PM, 4 People");
-        reservations.add("Sushi World - 2024-12-12, 7:00 PM, 2 People");
+        // Load reservations from SharedPreferences
+        reservations = loadReservations();
 
         // Initialize ListView
         ListView lvReservations = findViewById(R.id.lvReservations);
@@ -39,7 +44,27 @@ public class ViewReservationsActivity extends AppCompatActivity {
             if (!reservations.isEmpty()) {
                 reservations.remove(reservations.size() - 1); // Remove the last reservation
                 adapter.notifyDataSetChanged(); // Update the list view
+                saveReservations(); // Save the updated list
             }
         });
+    }
+
+    private ArrayList<String> loadReservations() {
+        SharedPreferences preferences = getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
+        String serializedReservations = preferences.getString(RESERVATIONS_KEY, "");
+        if (serializedReservations.isEmpty()) {
+            return new ArrayList<>();
+        } else {
+            String[] reservationArray = serializedReservations.split("\\|\\|");
+            return new ArrayList<>(Arrays.asList(reservationArray));
+        }
+    }
+
+    private void saveReservations() {
+        SharedPreferences preferences = getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
+        SharedPreferences.Editor editor = preferences.edit();
+        String serializedReservations = String.join("||", reservations);
+        editor.putString(RESERVATIONS_KEY, serializedReservations);
+        editor.apply();
     }
 }
